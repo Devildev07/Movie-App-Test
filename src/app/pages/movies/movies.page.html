@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>Trending Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item  of movies" [routerLink]="[item.id]">
+      <ion-card button>
+        <img
+          alt="{{item.title}}"
+          [src]="imgBaseUrl + '/w400' + item.poster_path"
+        />
+        <ion-card-header>
+          <ion-card-title
+            >{{item.title}}
+            <ion-badge color="success">{{item.vote_average}}</ion-badge>
+          </ion-card-title>
+          <ion-card-subtitle
+            >{{item.release_date | date: 'y'}}</ion-card-subtitle
+          >
+        </ion-card-header>
+
+        <!-- <ion-card-content> {{item.overview}} </ion-card-content> -->
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col> </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content> </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
