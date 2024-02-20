@@ -16,7 +16,7 @@
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
-@import '@ionic/angular/css/display.css';
+@import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
@@ -24,3 +24,26 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-button {
+  --padding-top: 4px !important;
+  --padding-bottom: 4px !important;
+  --padding-left: 4px !important;
+  --padding-right: 4px !important;
+  --box-shadow: none !important;
+}
+ion-back-button {
+  --border-radius: 50%;
+  min-width: 30px !important;
+  height: 46px !important;
+  margin-left: 0.5rem;
+}
+
+// ::ng-deep {
+//   ion-item {
+//     .item-inner {
+//       -webkit-padding-end: 0 !important;
+//       padding-inline-end: 0 !important;
+//     }
+//   }
+// }

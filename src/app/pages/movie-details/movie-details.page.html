@@ -4,9 +4,11 @@
       <!-- Movie Details -->
       <ion-label>{{currentMovie?.title}}</ion-label>
     </ion-title>
-    <ion-button slot="start" color="success">
-      <ion-back-button defaultHref="/movies"></ion-back-button>
-    </ion-button>
+    <ion-back-button
+      slot="start"
+      color="light"
+      defaultHref="/movies"
+    ></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
@@ -31,7 +33,9 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-label color="medium" class="ion-padding-bottom">{{currentMovie.overview}}</ion-label>
+      <ion-label color="medium" class="ion-padding-bottom"
+        >{{currentMovie.overview}}</ion-label
+      >
 
       <ion-item lines="none">
         <ion-icon name="calendar-outline" slot="start"></ion-icon>
@@ -50,7 +54,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button  expand="full" (click)="openHomePage()">
+  <ion-button expand="full" (click)="openHomePage()">
     Go to Home page &nbsp;
     <ion-icon name="home-outline"></ion-icon>
   </ion-button>

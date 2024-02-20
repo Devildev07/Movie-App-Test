@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item  of movies" [routerLink]="[item.id]">
-      <ion-card button>
+  <ion-row>
+    <ion-col
+      sizeXl="3"
+      sizeMd="4"
+      sizeXs="12"
+      *ngFor="let item  of movies"
+      [routerLink]="[item.id]"
+    >
+      <ion-card button class="ion-no-margin">
         <img
           alt="{{item.title}}"
           [src]="imgBaseUrl + '/w400' + item.poster_path"
@@ -24,13 +30,9 @@
 
         <!-- <ion-card-content> {{item.overview}} </ion-card-content> -->
       </ion-card>
-    </ion-item>
-  </ion-list>
-  <ion-grid>
-    <ion-row class="ion-align-items-center">
-      <ion-col> </ion-col>
-    </ion-row>
-  </ion-grid>
+    </ion-col>
+  </ion-row>
+
   <ion-infinite-scroll (ionInfinite)="loadMoreData($event)">
     <ion-infinite-scroll-content> </ion-infinite-scroll-content>
   </ion-infinite-scroll>
